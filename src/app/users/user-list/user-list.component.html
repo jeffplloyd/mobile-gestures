@@ -1,5 +1,5 @@
-<div class="text-right my-2">
-    <button *ngIf="isSelectable" type="button" class="btn btn-secondary" (click)="cancelSelect()">Cancel</button>
+<div *ngIf="isSelectable" [@expand] class="text-right my-2">
+    <button type="button" class="btn btn-secondary" (click)="cancelSelect()">Cancel</button>
 </div>
 <div class="grid-list" [ngClass]="{'grid-list-selectable' : isSelectable}">
     <div class="row no-gutters align-items-center grid-list-header">
@@ -11,15 +11,21 @@
         </div>
     </div>
     
-    <div *ngFor="let user of data; let index = index" class="row grid-list-row grid-list-row-actionable no-gutters" (press)="selectMe($event)">
+    <div *ngFor="let user of data; let index = index" class="row grid-list-row grid-list-row-actionable no-gutters" (press)="selectMe($event)" [ngClass]="{'grid-list-row-selected' : user[index]}">
         <div class="col-12 front-item" (swiperight)="swipedRight($event, index)" (swipeleft)="swipedLeft($event, index)" [ngClass]="{'move-right' : moveRight[index], 'move-left' : moveLeft[index]}">
             <div class="row no-gutters align-items-center">
                 <div class="col-8">
                     <div class="grid-list-cell">
-                        <div class="form-check align-middle mr-2">
-                            <input class="form-check-input" [name]="'user' + index" type="checkbox" value="" [id]="'user' + index">
+                        <div class="form-check align-middle">
+                            <input
+                                [(ngModel)]="user[index]"
+                                class="form-check-input"
+                                [name]="'user' + index"
+                                type="checkbox"
+                                value=""
+                                [id]="'user' + index">
                         </div>
-                        <div class="d-inline-block align-top">
+                        <div class="d-inline-block align-middle">
                             {{ user.first_name }} {{ user.last_name }} <br>
                             <small class="text-muted">{{ user.email }}</small>
                         </div>

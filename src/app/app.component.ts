@@ -24,10 +24,10 @@ import { RouterOutlet } from '@angular/router';
         query(':leave', animateChild()),
         group([
           query(':leave', [
-            animate('500ms ease-out', style({ right: '100%' }))
+            animate('250ms ease-out', style({ right: '100%' }))
           ]),
           query(':enter', [
-            animate('500ms ease-out', style({ right: '0%' }))
+            animate('250ms ease-out', style({ right: '0%' }))
           ])
         ]),
         query(':enter', animateChild())
@@ -48,10 +48,10 @@ import { RouterOutlet } from '@angular/router';
         query(':leave', animateChild()),
         group([
           query(':leave', [
-            animate('500ms ease-out', style({ left: '100%' }))
+            animate('250ms ease-out', style({ left: '100%' }))
           ]),
           query(':enter', [
-            animate('500ms ease-out', style({ left: '0%' }))
+            animate('250ms ease-out', style({ left: '0%' }))
           ])
         ]),
         query(':enter', animateChild())

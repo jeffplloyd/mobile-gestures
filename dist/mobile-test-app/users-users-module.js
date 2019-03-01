@@ -2085,7 +2085,7 @@ var HttpClientJsonpModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"text-right my-2\">\n    <button *ngIf=\"isSelectable\" type=\"button\" class=\"btn btn-secondary\" (click)=\"cancelSelect()\">Cancel</button>\n</div>\n<div class=\"grid-list\" [ngClass]=\"{'grid-list-selectable' : isSelectable}\">\n    <div class=\"row no-gutters align-items-center grid-list-header\">\n        <div class=\"col-8\">\n            <div class=\"grid-list-cell\">User</div>\n        </div>\n        <div class=\"col-4\">\n            <div class=\"grid-list-cell\">Gender</div>\n        </div>\n    </div>\n    \n    <div *ngFor=\"let user of data; let index = index\" class=\"row grid-list-row grid-list-row-actionable no-gutters\" (press)=\"selectMe($event)\">\n        <div class=\"col-12 front-item\" (swiperight)=\"swipedRight($event, index)\" (swipeleft)=\"swipedLeft($event, index)\" [ngClass]=\"{'move-right' : moveRight[index], 'move-left' : moveLeft[index]}\">\n            <div class=\"row no-gutters align-items-center\">\n                <div class=\"col-8\">\n                    <div class=\"grid-list-cell\">\n                        <div class=\"form-check align-middle mr-2\">\n                            <input class=\"form-check-input\" [name]=\"'user' + index\" type=\"checkbox\" value=\"\" [id]=\"'user' + index\">\n                        </div>\n                        <div class=\"d-inline-block align-top\">\n                            {{ user.first_name }} {{ user.last_name }} <br>\n                            <small class=\"text-muted\">{{ user.email }}</small>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-4\">\n                    <div class=\"grid-list-cell\">\n                        {{ user.gender }}\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-12 behind-item\">\n            <div class=\"row no-gutters align-items-stretch h-100\">\n                <div class=\"col-6 bg-info text-white\">\n                    <div class=\"row no-gutters text-center\">\n                        <div class=\"col\">\n                            <i class=\"fas fa-user-check mt-2\"></i><br>\n                            <small>Activate</small>\n                        </div>\n                        <div class=\"col\">\n                            <i class=\"far fa-envelope mt-2\"></i><br>\n                            <small>Re-Invite</small>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-3 bg-danger text-white ml-auto d-inline-block\">\n                    <div class=\"row text-center\">\n                        <div class=\"col\">\n                            <i class=\"fas fa-user-times mt-2\"></i><br>\n                            <small>Deactivate</small>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div *ngIf=\"isSelectable\" [@expand] class=\"text-right my-2\">\n    <button type=\"button\" class=\"btn btn-secondary\" (click)=\"cancelSelect()\">Cancel</button>\n</div>\n<div class=\"grid-list\" [ngClass]=\"{'grid-list-selectable' : isSelectable}\">\n    <div class=\"row no-gutters align-items-center grid-list-header\">\n        <div class=\"col-8\">\n            <div class=\"grid-list-cell\">User</div>\n        </div>\n        <div class=\"col-4\">\n            <div class=\"grid-list-cell\">Gender</div>\n        </div>\n    </div>\n    \n    <div *ngFor=\"let user of data; let index = index\" class=\"row grid-list-row grid-list-row-actionable no-gutters\" (press)=\"selectMe($event)\" [ngClass]=\"{'grid-list-row-selected' : user[index]}\">\n        <div class=\"col-12 front-item\" (swiperight)=\"swipedRight($event, index)\" (swipeleft)=\"swipedLeft($event, index)\" [ngClass]=\"{'move-right' : moveRight[index], 'move-left' : moveLeft[index]}\">\n            <div class=\"row no-gutters align-items-center\">\n                <div class=\"col-8\">\n                    <div class=\"grid-list-cell\">\n                        <div class=\"form-check align-middle\">\n                            <input\n                                [(ngModel)]=\"user[index]\"\n                                class=\"form-check-input\"\n                                [name]=\"'user' + index\"\n                                type=\"checkbox\"\n                                value=\"\"\n                                [id]=\"'user' + index\">\n                        </div>\n                        <div class=\"d-inline-block align-middle\">\n                            {{ user.first_name }} {{ user.last_name }} <br>\n                            <small class=\"text-muted\">{{ user.email }}</small>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-4\">\n                    <div class=\"grid-list-cell\">\n                        {{ user.gender }}\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-12 behind-item\">\n            <div class=\"row no-gutters align-items-stretch h-100\">\n                <div class=\"col-6 bg-info text-white\">\n                    <div class=\"row no-gutters text-center\">\n                        <div class=\"col\">\n                            <i class=\"fas fa-user-check mt-2\"></i><br>\n                            <small>Activate</small>\n                        </div>\n                        <div class=\"col\">\n                            <i class=\"far fa-envelope mt-2\"></i><br>\n                            <small>Re-Invite</small>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-3 bg-danger text-white ml-auto d-inline-block\">\n                    <div class=\"row text-center\">\n                        <div class=\"col\">\n                            <i class=\"fas fa-user-times mt-2\"></i><br>\n                            <small>Deactivate</small>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -2112,13 +2112,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserListComponent", function() { return UserListComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+
 
 
 var UserListComponent = /** @class */ (function () {
     function UserListComponent() {
         this.data = [];
         this.isSelectable = false;
-        this.user = [];
+        this.user = {};
         this.moveRight = [];
         this.moveLeft = [];
     }
@@ -2131,21 +2133,23 @@ var UserListComponent = /** @class */ (function () {
         this.isSelectable = false;
     };
     UserListComponent.prototype.swipedRight = function (event, index) {
-        console.log(event);
-        if (this.moveLeft[index]) {
-            this.moveLeft[index] = false;
-        }
-        else {
-            this.moveRight[index] = true;
+        if (!this.user[index]) {
+            if (this.moveLeft[index]) {
+                this.moveLeft[index] = false;
+            }
+            else {
+                this.moveRight[index] = true;
+            }
         }
     };
     UserListComponent.prototype.swipedLeft = function (event, index) {
-        console.log(event);
-        if (this.moveRight[index]) {
-            this.moveRight[index] = false;
-        }
-        else {
-            this.moveLeft[index] = true;
+        if (!this.user[index]) {
+            if (this.moveRight[index]) {
+                this.moveRight[index] = false;
+            }
+            else {
+                this.moveLeft[index] = true;
+            }
         }
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -2156,6 +2160,18 @@ var UserListComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'bs-user-list',
             template: __webpack_require__(/*! ./user-list.component.html */ "./src/app/users/user-list/user-list.component.html"),
+            animations: [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["trigger"])('expand', [
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["transition"])(':enter', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({ height: "0", overflow: "hidden" }),
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])('250ms ease-in-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({ height: "*", overflow: "visible" }))
+                    ]),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["transition"])(':leave', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({ height: "*", overflow: "visible" }),
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])('250ms ease-in-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({ height: "0", overflow: "hidden" }))
+                    ])
+                ])
+            ],
             styles: [__webpack_require__(/*! ./user-list.component.scss */ "./src/app/users/user-list/user-list.component.scss")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
@@ -2211,7 +2227,7 @@ var UsersRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid py-4\">\n    <h2>User List</h2>\n</div>\n<div class=\"container-fluid\">\n    <bs-user-list [data]=\"users\"></bs-user-list>\n</div>\n"
+module.exports = "<div class=\"container-fluid py-4\">\n    <div class=\"row align-items-center\">\n        <div class=\"col-3 text-left\">\n            <a class=\"back\" routerLink=\"/\"><i class=\"fas fa-arrow-left\"></i></a>\n        </div>\n        <div class=\"col-6\">\n            <h2>User List</h2>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid\">\n    <bs-user-list [data]=\"users\"></bs-user-list>\n</div>\n"
 
 /***/ }),
 
@@ -2282,10 +2298,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _users_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./users.component */ "./src/app/users/users.component.ts");
-/* harmony import */ var _user_list_user_list_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user-list/user-list.component */ "./src/app/users/user-list/user-list.component.ts");
-/* harmony import */ var _users_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./users-routing.module */ "./src/app/users/users-routing.module.ts");
-/* harmony import */ var _users_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./users.service */ "./src/app/users/users.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _users_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./users.component */ "./src/app/users/users.component.ts");
+/* harmony import */ var _user_list_user_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./user-list/user-list.component */ "./src/app/users/user-list/user-list.component.ts");
+/* harmony import */ var _users_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./users-routing.module */ "./src/app/users/users-routing.module.ts");
+/* harmony import */ var _users_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./users.service */ "./src/app/users/users.service.ts");
+
 
 
 
@@ -2300,16 +2318,17 @@ var UsersModule = /** @class */ (function () {
     UsersModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _users_component__WEBPACK_IMPORTED_MODULE_4__["UsersComponent"],
-                _user_list_user_list_component__WEBPACK_IMPORTED_MODULE_5__["UserListComponent"]
+                _users_component__WEBPACK_IMPORTED_MODULE_5__["UsersComponent"],
+                _user_list_user_list_component__WEBPACK_IMPORTED_MODULE_6__["UserListComponent"]
             ],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
-                _users_routing_module__WEBPACK_IMPORTED_MODULE_6__["UsersRoutingModule"]
+                _users_routing_module__WEBPACK_IMPORTED_MODULE_7__["UsersRoutingModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"]
             ],
             providers: [
-                _users_service__WEBPACK_IMPORTED_MODULE_7__["UsersService"]
+                _users_service__WEBPACK_IMPORTED_MODULE_8__["UsersService"]
             ]
         })
     ], UsersModule);

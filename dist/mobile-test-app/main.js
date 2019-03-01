@@ -140,10 +140,10 @@ var AppComponent = /** @class */ (function () {
                         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["query"])(':leave', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animateChild"])()),
                         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["group"])([
                             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["query"])(':leave', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])('500ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({ right: '100%' }))
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])('250ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({ right: '100%' }))
                             ]),
                             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["query"])(':enter', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])('500ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({ right: '0%' }))
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])('250ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({ right: '0%' }))
                             ])
                         ]),
                         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["query"])(':enter', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animateChild"])())
@@ -164,10 +164,10 @@ var AppComponent = /** @class */ (function () {
                         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["query"])(':leave', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animateChild"])()),
                         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["group"])([
                             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["query"])(':leave', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])('500ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({ left: '100%' }))
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])('250ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({ left: '100%' }))
                             ]),
                             Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["query"])(':enter', [
-                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])('500ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({ left: '0%' }))
+                                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])('250ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({ left: '0%' }))
                             ])
                         ]),
                         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["query"])(':enter', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animateChild"])())

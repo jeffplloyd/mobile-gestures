@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { UsersComponent } from './users.component';
 import { UserListComponent } from './user-list/user-list.component';
@@ -15,7 +16,8 @@ import { UsersService } from './users.service';
   imports: [
     CommonModule,
     HttpClientModule,
-    UsersRoutingModule
+    UsersRoutingModule,
+    FormsModule
   ],
   providers: [
     UsersService

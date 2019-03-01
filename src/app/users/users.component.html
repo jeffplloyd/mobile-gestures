@@ -1,5 +1,12 @@
 <div class="container-fluid py-4">
-    <h2>User List</h2>
+    <div class="row align-items-center">
+        <div class="col-3 text-left">
+            <a class="back" routerLink="/"><i class="fas fa-arrow-left"></i></a>
+        </div>
+        <div class="col-6">
+            <h2>User List</h2>
+        </div>
+    </div>
 </div>
 <div class="container-fluid">
     <bs-user-list [data]="users"></bs-user-list>
