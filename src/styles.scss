@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    text-align: center;
+}
+
+.grid-list {
+    text-align: left;
+
+    .row {
+        border-bottom: 1px solid #f8f9fa;
+    }
+
+    &-header {
+        background-color: #f8f9fa;
+        font-weight: 500;
+    }
+
+    &-cell {
+        font-size: .875rem;
+        padding: .5rem 15px;
+    }
+
+    .form-check {
+        display: none;
+    }
+
+    &-selectable {
+        .form-check {
+            display: inline-block;
+        }
+    }
+}

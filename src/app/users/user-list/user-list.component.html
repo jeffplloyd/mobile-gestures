@@ -1,0 +1,31 @@
+<div class="text-right my-2">
+    <button *ngIf="isSelectable" type="button" class="btn btn-secondary" (click)="cancelSelect()">Cancel</button>
+</div>
+<div class="grid-list" [ngClass]="{'grid-list-selectable' : isSelectable}">
+    <div class="row no-gutters align-items-center grid-list-header">
+        <div class="col-8">
+            <div class="grid-list-cell">User</div>
+        </div>
+        <div class="col-4">
+            <div class="grid-list-cell">Gender</div>
+        </div>
+    </div>
+    <div *ngFor="let user of data; let index = index" class="row no-gutters align-items-center" (press)="selectMe($event)">
+        <div class="col-8">
+            <div class="grid-list-cell">
+                <div class="form-check align-middle mr-2">
+                    <input class="form-check-input" [name]="'user' + index" type="checkbox" value="" [id]="'user' + index">
+                </div>
+                <div class="d-inline-block align-top">
+                    {{ user.first_name }} {{ user.last_name }} <br>
+                    <small class="text-muted">{{ user.email }}</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="grid-list-cell">
+                {{ user.gender }}
+            </div>
+        </div>
+    </div>
+</div>
