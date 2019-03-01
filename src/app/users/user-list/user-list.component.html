@@ -1,4 +1,4 @@
-<div *ngIf="isSelectable" [@expand] class="text-right">
+<div *ngIf="isSelectable" [@expand] class="text-right overflow-hidden">
     <button type="button" class="btn btn-link my-2" (click)="cancelSelect()">Cancel</button>
 </div>
 <div class="grid-list" [ngClass]="{'grid-list-selectable' : isSelectable}">
@@ -11,7 +11,7 @@
         </div>
     </div>
     
-    <div *ngFor="let user of data; let index = index" class="row grid-list-row grid-list-row-actionable no-gutters" (press)="selectMe($event)" [ngClass]="{'grid-list-row-selected' : user[index]}">
+    <div *ngFor="let user of data; let index = index" class="row grid-list-row grid-list-row-actionable no-gutters" (press)="selectMe($event, index)" [ngClass]="{'grid-list-row-selected' : user[index]}">
         <div class="col-12 front-item" (swiperight)="swipedRight($event, index)" (swipeleft)="swipedLeft($event, index)" [ngClass]="{'move-right' : moveRight[index], 'move-left' : moveLeft[index]}">
             <div class="row no-gutters align-items-center">
                 <div class="col-8">

@@ -33,8 +33,10 @@ export class UserListComponent implements OnInit {
   ngOnInit() {
   }
 
-  selectMe(event) {
-    this.isSelectable = true;
+  selectMe(event, index) {
+    this.isSelectable = !this.isSelectable;
+    this.user[index] = true;
+    console.log(this.user[index]);
   }
 
   cancelSelect() {

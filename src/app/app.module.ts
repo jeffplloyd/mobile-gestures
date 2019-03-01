@@ -17,6 +17,12 @@ export class HammerConfig extends HammerGestureConfig {
     'swipe': { direction: Hammer.DIRECTION_ALL },
     'press': { time: 500 }
   }
+  buildHammer(element: HTMLElement) {
+    let mc = new Hammer(element, {
+      touchAction: "pan-y"
+    });
+    return mc;
+  }
 }
 
 @NgModule({

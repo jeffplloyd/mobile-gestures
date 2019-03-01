@@ -227,6 +227,12 @@ var HammerConfig = /** @class */ (function (_super) {
         };
         return _this;
     }
+    HammerConfig.prototype.buildHammer = function (element) {
+        var mc = new hammerjs__WEBPACK_IMPORTED_MODULE_9__(element, {
+            touchAction: "pan-y"
+        });
+        return mc;
+    };
     return HammerConfig;
 }(_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["HammerGestureConfig"]));
 
