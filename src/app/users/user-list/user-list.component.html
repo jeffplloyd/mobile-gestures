@@ -1,5 +1,5 @@
-<div *ngIf="isSelectable" [@expand] class="text-right my-2">
-    <button type="button" class="btn btn-secondary" (click)="cancelSelect()">Cancel</button>
+<div *ngIf="isSelectable" [@expand] class="text-right">
+    <button type="button" class="btn btn-link my-2" (click)="cancelSelect()">Cancel</button>
 </div>
 <div class="grid-list" [ngClass]="{'grid-list-selectable' : isSelectable}">
     <div class="row no-gutters align-items-center grid-list-header">
