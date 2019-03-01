@@ -47,11 +47,11 @@
                 <div class="row no-gutters align-items-stretch h-100">
                     <div class="col-6 bg-info text-white">
                         <div class="row no-gutters text-center">
-                            <div class="col" (tap)="takeAction('activated', index)">
+                            <div class="col" (click)="takeAction('activated', index)">
                                 <i class="fas fa-user-check mt-2"></i><br>
                                 <small>Activate</small>
                             </div>
-                            <div class="col" (tap)="takeAction('sent another invite to', index)">
+                            <div class="col" (click)="takeAction('sent another invite to', index)">
                                 <i class="far fa-envelope mt-2"></i><br>
                                 <small>Re-Invite</small>
                             </div>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="col-3 bg-danger text-white ml-auto d-inline-block">
                         <div class="row text-center">
-                            <div class="col" (tap)="takeAction('deactivated', index)">
+                            <div class="col" (click)="takeAction('deactivated', index)">
                                 <i class="fas fa-user-times mt-2"></i><br>
                                 <small>Deactivate</small>
                             </div>
