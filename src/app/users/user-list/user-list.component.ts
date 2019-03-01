@@ -49,6 +49,12 @@ export class UserListComponent implements OnInit {
     this.userSelect[index] = event;
   }
 
+  takeAction(action, index) {
+    alert(`You ${action} that user. Good job!`);
+    this.moveRight[index] = false;
+    this.moveLeft[index] = false;
+  }
+
   cancelSelect() {
     this.isSelectable = false;
     Object.keys(this.userSelect).forEach((key) => {
