@@ -308,7 +308,7 @@ var CoreModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid py-4\">\n    <div class=\"row\">\n        <div class=\"col-12\">\n            <h2>Hello World!</h2>\n            <p>Testing out some mobile gesture with this app.</p>\n            <p><a routerLink=\"users\">Go to User List</a></p>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"container-fluid py-4\">\n    <div class=\"row\">\n        <div class=\"col-12\">\n            <h2>Hello World!</h2>\n            <p>Testing out some mobile gestures with this app. Head over to the user list and test out swipe left/right for actions and long press to select items. Have fun!</p>\n            <p><a routerLink=\"users\">Go to User List</a></p>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 

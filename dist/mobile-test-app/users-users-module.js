@@ -2129,6 +2129,8 @@ var UserListComponent = /** @class */ (function () {
     UserListComponent.prototype.selectToggle = function (event, index) {
         this.isSelectable = !this.isSelectable;
         if (this.isSelectable) {
+            this.moveRight[index] = false;
+            this.moveLeft[index] = false;
             this.selectUser(this.isSelectable, index);
         }
         else {
@@ -2144,9 +2146,6 @@ var UserListComponent = /** @class */ (function () {
         Object.keys(this.userSelect).forEach(function (key) {
             _this.userSelect[key] = false;
         });
-        // this.userSelect.forEach((index) => {
-        //   this.userSelect[index] = false;
-        // });
     };
     UserListComponent.prototype.swipedRight = function (event, index) {
         if (!this.isSelectable) {

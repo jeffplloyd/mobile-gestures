@@ -37,6 +37,8 @@ export class UserListComponent implements OnInit {
   selectToggle(event, index) {
     this.isSelectable = !this.isSelectable;
     if(this.isSelectable) {
+      this.moveRight[index] = false;
+      this.moveLeft[index] = false;
       this.selectUser(this.isSelectable, index)
     } else {
       this.cancelSelect();
