@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 
 import * as Hammer from 'hammerjs';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 export class HammerConfig extends HammerGestureConfig {
   overrides = <any>{
@@ -36,7 +38,8 @@ export class HammerConfig extends HammerGestureConfig {
     BrowserAnimationsModule,
     CoreModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{
     provide: HAMMER_GESTURE_CONFIG,
