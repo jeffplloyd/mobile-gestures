@@ -24,27 +24,38 @@ import { trigger, style, animate, transition } from '@angular/animations';
 export class UserListComponent implements OnInit {
   @Input() data: any = [];
   isSelectable = false
-  user: any = {};
+  public userSelect: any = {};
   moveRight: Array<boolean> = [];
   moveLeft: Array<boolean> = [];
   
   constructor() { }
 
   ngOnInit() {
+
   }
 
-  selectMe(event, index) {
+  selectToggle(event, index) {
     this.isSelectable = !this.isSelectable;
-    this.user[index] = true;
-    console.log(this.user[index]);
+    if(this.isSelectable) {
+      this.selectUser(this.isSelectable, index)
+    } else {
+      this.cancelSelect();
+    }
+  }
+
+  selectUser(event, index) {
+    this.userSelect[index] = event;
   }
 
   cancelSelect() {
     this.isSelectable = false;
+    Object.keys(this.userSelect).forEach((key) => {
+      this.userSelect[key] = false;
+    });
   }
 
   swipedRight(event, index) {
-    if(!this.user[index]) {
+    if(!this.isSelectable) {
       if(this.moveLeft[index]) {
         this.moveLeft[index] = false;
       } else {
@@ -54,7 +65,7 @@ export class UserListComponent implements OnInit {
   }
 
   swipedLeft(event, index) {
-    if(!this.user[index]) {
+    if(!this.isSelectable) {
       if(this.moveRight[index]) {
         this.moveRight[index] = false;
       } else {

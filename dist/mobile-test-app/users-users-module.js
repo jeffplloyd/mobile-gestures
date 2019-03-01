@@ -2085,7 +2085,7 @@ var HttpClientJsonpModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"isSelectable\" [@expand] class=\"text-right overflow-hidden\">\n    <button type=\"button\" class=\"btn btn-link my-2\" (click)=\"cancelSelect()\">Cancel</button>\n</div>\n<div class=\"grid-list\" [ngClass]=\"{'grid-list-selectable' : isSelectable}\">\n    <div class=\"row no-gutters align-items-center grid-list-header\">\n        <div class=\"col-8\">\n            <div class=\"grid-list-cell\">User</div>\n        </div>\n        <div class=\"col-4\">\n            <div class=\"grid-list-cell\">Gender</div>\n        </div>\n    </div>\n    \n    <div *ngFor=\"let user of data; let index = index\" class=\"row grid-list-row grid-list-row-actionable no-gutters\" (press)=\"selectMe($event, index)\" [ngClass]=\"{'grid-list-row-selected' : user[index]}\">\n        <div class=\"col-12 front-item\" (swiperight)=\"swipedRight($event, index)\" (swipeleft)=\"swipedLeft($event, index)\" [ngClass]=\"{'move-right' : moveRight[index], 'move-left' : moveLeft[index]}\">\n            <div class=\"row no-gutters align-items-center\">\n                <div class=\"col-8\">\n                    <div class=\"grid-list-cell\">\n                        <div class=\"form-check align-middle\">\n                            <input\n                                [(ngModel)]=\"user[index]\"\n                                class=\"form-check-input\"\n                                [name]=\"'user' + index\"\n                                type=\"checkbox\"\n                                value=\"\"\n                                [id]=\"'user' + index\">\n                        </div>\n                        <div class=\"d-inline-block align-middle\">\n                            {{ user.first_name }} {{ user.last_name }} <br>\n                            <small class=\"text-muted\">{{ user.email }}</small>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-4\">\n                    <div class=\"grid-list-cell\">\n                        {{ user.gender }}\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-12 behind-item\">\n            <div class=\"row no-gutters align-items-stretch h-100\">\n                <div class=\"col-6 bg-info text-white\">\n                    <div class=\"row no-gutters text-center\">\n                        <div class=\"col\">\n                            <i class=\"fas fa-user-check mt-2\"></i><br>\n                            <small>Activate</small>\n                        </div>\n                        <div class=\"col\">\n                            <i class=\"far fa-envelope mt-2\"></i><br>\n                            <small>Re-Invite</small>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-3 bg-danger text-white ml-auto d-inline-block\">\n                    <div class=\"row text-center\">\n                        <div class=\"col\">\n                            <i class=\"fas fa-user-times mt-2\"></i><br>\n                            <small>Deactivate</small>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div *ngIf=\"isSelectable\" [@expand] class=\"text-right overflow-hidden\">\n    <button type=\"button\" class=\"btn btn-link my-2\" (click)=\"cancelSelect()\">Cancel</button>\n</div>\n<div class=\"grid-list\" [ngClass]=\"{'grid-list-selectable' : isSelectable}\">\n    <div class=\"row no-gutters align-items-center grid-list-header\">\n        <div class=\"col-8\">\n            <div class=\"grid-list-cell\">User</div>\n        </div>\n        <div class=\"col-4\">\n            <div class=\"grid-list-cell\">Gender</div>\n        </div>\n    </div>\n    <ng-container *ngIf=\"data.length == 0\">\n        <div class=\"my-4 py-4 text-center\">\n            <span>Loading...</span>\n        </div>\n    </ng-container>\n    <ng-container *ngIf=\"data.length > 0\">\n        <div *ngFor=\"let user of data; let index = index\" class=\"row grid-list-row grid-list-row-actionable no-gutters\" (press)=\"selectToggle($event, index)\" [ngClass]=\"{'grid-list-row-selected' : userSelect[index]}\">\n            <div class=\"col-12 front-item\" (swiperight)=\"swipedRight($event, index)\" (swipeleft)=\"swipedLeft($event, index)\" [ngClass]=\"{'move-right' : moveRight[index], 'move-left' : moveLeft[index]}\">\n                <div class=\"row no-gutters align-items-center\">\n                    <div class=\"col-8\">\n                        <div class=\"grid-list-cell\">\n                            <div class=\"form-check align-middle\">\n                                <input\n                                    [(ngModel)]=\"userSelect[index]\"\n                                    class=\"form-check-input\"\n                                    name=\"userSelect[]\"\n                                    type=\"checkbox\"\n                                    value=\"\"\n                                    (ngModelChange)=\"selectUser($event)\">\n                            </div>\n                            <div class=\"d-inline-block align-middle\">\n                                {{ user.first_name }} {{ user.last_name }} <br>\n                                <small class=\"text-muted\">{{ user.email }}</small>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-4\">\n                        <div class=\"grid-list-cell\">\n                            {{ user.gender }}\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 behind-item\">\n                <div class=\"row no-gutters align-items-stretch h-100\">\n                    <div class=\"col-6 bg-info text-white\">\n                        <div class=\"row no-gutters text-center\">\n                            <div class=\"col\">\n                                <i class=\"fas fa-user-check mt-2\"></i><br>\n                                <small>Activate</small>\n                            </div>\n                            <div class=\"col\">\n                                <i class=\"far fa-envelope mt-2\"></i><br>\n                                <small>Re-Invite</small>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-3 bg-danger text-white ml-auto d-inline-block\">\n                        <div class=\"row text-center\">\n                            <div class=\"col\">\n                                <i class=\"fas fa-user-times mt-2\"></i><br>\n                                <small>Deactivate</small>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </ng-container>\n</div>\n"
 
 /***/ }),
 
@@ -2120,22 +2120,36 @@ var UserListComponent = /** @class */ (function () {
     function UserListComponent() {
         this.data = [];
         this.isSelectable = false;
-        this.user = {};
+        this.userSelect = {};
         this.moveRight = [];
         this.moveLeft = [];
     }
     UserListComponent.prototype.ngOnInit = function () {
     };
-    UserListComponent.prototype.selectMe = function (event, index) {
+    UserListComponent.prototype.selectToggle = function (event, index) {
         this.isSelectable = !this.isSelectable;
-        this.user[index] = true;
-        console.log(this.user[index]);
+        if (this.isSelectable) {
+            this.selectUser(this.isSelectable, index);
+        }
+        else {
+            this.cancelSelect();
+        }
+    };
+    UserListComponent.prototype.selectUser = function (event, index) {
+        this.userSelect[index] = event;
     };
     UserListComponent.prototype.cancelSelect = function () {
+        var _this = this;
         this.isSelectable = false;
+        Object.keys(this.userSelect).forEach(function (key) {
+            _this.userSelect[key] = false;
+        });
+        // this.userSelect.forEach((index) => {
+        //   this.userSelect[index] = false;
+        // });
     };
     UserListComponent.prototype.swipedRight = function (event, index) {
-        if (!this.user[index]) {
+        if (!this.isSelectable) {
             if (this.moveLeft[index]) {
                 this.moveLeft[index] = false;
             }
@@ -2145,7 +2159,7 @@ var UserListComponent = /** @class */ (function () {
         }
     };
     UserListComponent.prototype.swipedLeft = function (event, index) {
-        if (!this.user[index]) {
+        if (!this.isSelectable) {
             if (this.moveRight[index]) {
                 this.moveRight[index] = false;
             }

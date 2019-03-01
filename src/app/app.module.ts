@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +19,7 @@ export class HammerConfig extends HammerGestureConfig {
   }
   buildHammer(element: HTMLElement) {
     let mc = new Hammer(element, {
-      touchAction: "pan-y"
+      touchAction: 'auto'
     });
     return mc;
   }
@@ -35,7 +35,8 @@ export class HammerConfig extends HammerGestureConfig {
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: HAMMER_GESTURE_CONFIG,

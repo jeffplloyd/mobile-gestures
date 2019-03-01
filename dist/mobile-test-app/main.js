@@ -229,7 +229,7 @@ var HammerConfig = /** @class */ (function (_super) {
     }
     HammerConfig.prototype.buildHammer = function (element) {
         var mc = new hammerjs__WEBPACK_IMPORTED_MODULE_9__(element, {
-            touchAction: "pan-y"
+            touchAction: 'auto'
         });
         return mc;
     };
@@ -250,7 +250,8 @@ var AppModule = /** @class */ (function () {
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
                 _core_core_module__WEBPACK_IMPORTED_MODULE_7__["CoreModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"]
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"]
             ],
             providers: [{
                     provide: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["HAMMER_GESTURE_CONFIG"],
