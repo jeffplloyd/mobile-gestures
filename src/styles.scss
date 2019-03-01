@@ -6,8 +6,17 @@ body {
 .grid-list {
     text-align: left;
 
-    .row {
+    &-row {
         border-bottom: 1px solid #f8f9fa;
+        position: relative;
+
+        &-actionable {
+            overflow: hidden;
+        }
+
+        &-selected {
+            background: #bee5eb;
+        }
     }
 
     &-header {
@@ -29,4 +38,27 @@ body {
             display: inline-block;
         }
     }
+}
+
+.front-item {
+    background: #fff;
+    left: 0;
+    position: relative;
+    transition: left 375ms ease-out;
+    z-index: 10;
+
+    &.move-right {
+        left: 50%;
+    }
+
+    &.move-left {
+        left: -25%;
+    }
+}
+
+.behind-item {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
 }

@@ -9,6 +9,8 @@ export class UserListComponent implements OnInit {
   @Input() data: any = [];
   isSelectable = false
   user: any = [];
+  moveRight: Array<boolean> = [];
+  moveLeft: Array<boolean> = [];
   
   constructor() { }
 
@@ -21,6 +23,24 @@ export class UserListComponent implements OnInit {
 
   cancelSelect() {
     this.isSelectable = false;
+  }
+
+  swipedRight(event, index) {
+    console.log(event);
+    if(this.moveLeft[index]) {
+      this.moveLeft[index] = false;
+    } else {
+      this.moveRight[index] = true;
+    }
+  }
+
+  swipedLeft(event, index) {
+    console.log(event);
+    if(this.moveRight[index]) {
+      this.moveRight[index] = false;
+    } else {
+      this.moveLeft[index] = true;
+    }
   }
 
 }

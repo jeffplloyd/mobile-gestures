@@ -10,21 +10,50 @@
             <div class="grid-list-cell">Gender</div>
         </div>
     </div>
-    <div *ngFor="let user of data; let index = index" class="row no-gutters align-items-center" (press)="selectMe($event)">
-        <div class="col-8">
-            <div class="grid-list-cell">
-                <div class="form-check align-middle mr-2">
-                    <input class="form-check-input" [name]="'user' + index" type="checkbox" value="" [id]="'user' + index">
+    
+    <div *ngFor="let user of data; let index = index" class="row grid-list-row grid-list-row-actionable no-gutters" (press)="selectMe($event)">
+        <div class="col-12 front-item" (swiperight)="swipedRight($event, index)" (swipeleft)="swipedLeft($event, index)" [ngClass]="{'move-right' : moveRight[index], 'move-left' : moveLeft[index]}">
+            <div class="row no-gutters align-items-center">
+                <div class="col-8">
+                    <div class="grid-list-cell">
+                        <div class="form-check align-middle mr-2">
+                            <input class="form-check-input" [name]="'user' + index" type="checkbox" value="" [id]="'user' + index">
+                        </div>
+                        <div class="d-inline-block align-top">
+                            {{ user.first_name }} {{ user.last_name }} <br>
+                            <small class="text-muted">{{ user.email }}</small>
+                        </div>
+                    </div>
                 </div>
-                <div class="d-inline-block align-top">
-                    {{ user.first_name }} {{ user.last_name }} <br>
-                    <small class="text-muted">{{ user.email }}</small>
+                <div class="col-4">
+                    <div class="grid-list-cell">
+                        {{ user.gender }}
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-4">
-            <div class="grid-list-cell">
-                {{ user.gender }}
+        <div class="col-12 behind-item">
+            <div class="row no-gutters align-items-stretch h-100">
+                <div class="col-6 bg-info text-white">
+                    <div class="row no-gutters text-center">
+                        <div class="col">
+                            <i class="fas fa-user-check mt-2"></i><br>
+                            <small>Activate</small>
+                        </div>
+                        <div class="col">
+                            <i class="far fa-envelope mt-2"></i><br>
+                            <small>Re-Invite</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 bg-danger text-white ml-auto d-inline-block">
+                    <div class="row text-center">
+                        <div class="col">
+                            <i class="fas fa-user-times mt-2"></i><br>
+                            <small>Deactivate</small>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
