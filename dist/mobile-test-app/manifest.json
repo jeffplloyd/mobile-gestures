@@ -4,8 +4,8 @@
   "theme_color": "#007bff",
   "background_color": "#fafafa",
   "display": "standalone",
-  "scope": "/",
-  "start_url": "/",
+  "scope": "/mobile-gestures/dist/mobile-test-app/",
+  "start_url": "/mobile-gestures/dist/mobile-test-app/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
