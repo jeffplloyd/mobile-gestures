@@ -2,7 +2,7 @@
   "name": "mobile-test-app",
   "short_name": "mobile-test-app",
   "theme_color": "#007bff",
-  "background_color": "#fafafa",
+  "background_color": "#007bff",
   "display": "standalone",
   "scope": "/mobile-gestures/dist/mobile-test-app/",
   "start_url": "/mobile-gestures/dist/mobile-test-app/",
