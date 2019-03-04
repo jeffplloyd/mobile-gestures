@@ -11,10 +11,10 @@
         "/mobile-gestures/dist/mobile-test-app/es2015-polyfills.4a4cfea0ce682043f4e9.js",
         "/mobile-gestures/dist/mobile-test-app/favicon.ico",
         "/mobile-gestures/dist/mobile-test-app/index.html",
-        "/mobile-gestures/dist/mobile-test-app/main.488d33f598bb8cbc3be5.js",
+        "/mobile-gestures/dist/mobile-test-app/main.93c01c20ff0e50972bdb.js",
         "/mobile-gestures/dist/mobile-test-app/polyfills.407a467dedb63cfdd103.js",
         "/mobile-gestures/dist/mobile-test-app/runtime.7bb467b3714fb3b7ba7d.js",
-        "/mobile-gestures/dist/mobile-test-app/styles.e2c3c9d9b13cf569e4f8.css"
+        "/mobile-gestures/dist/mobile-test-app/styles.84407d0e6af31e8c3947.css"
       ],
       "patterns": []
     },
@@ -48,11 +48,11 @@
     "/mobile-gestures/dist/mobile-test-app/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/mobile-gestures/dist/mobile-test-app/es2015-polyfills.4a4cfea0ce682043f4e9.js": "b7a81c61d32b0b12737f0c13f45973ba391cd7f9",
     "/mobile-gestures/dist/mobile-test-app/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/mobile-gestures/dist/mobile-test-app/index.html": "3ae3b9119a15162b394e026f9d74805d49d93e11",
-    "/mobile-gestures/dist/mobile-test-app/main.488d33f598bb8cbc3be5.js": "573813f9ba08fec2d60a687b71f3f1ba6000df63",
+    "/mobile-gestures/dist/mobile-test-app/index.html": "c48d3c9f0c326cc47501a530141ae526cb984ceb",
+    "/mobile-gestures/dist/mobile-test-app/main.93c01c20ff0e50972bdb.js": "ccb496dc474d4630c886f2241bb4c909d6c3c83f",
     "/mobile-gestures/dist/mobile-test-app/polyfills.407a467dedb63cfdd103.js": "ffa449995bf2eba2ccd0a002417214f7eb75e7b5",
     "/mobile-gestures/dist/mobile-test-app/runtime.7bb467b3714fb3b7ba7d.js": "184132488e06ee4cbfcf27dcbcf10c11dee28ef9",
-    "/mobile-gestures/dist/mobile-test-app/styles.e2c3c9d9b13cf569e4f8.css": "21f1dc936a9a2ccf20c5e82e8ba0d9a070b0eecd"
+    "/mobile-gestures/dist/mobile-test-app/styles.84407d0e6af31e8c3947.css": "3663ce521c2d63815979020b6c23c510b358ddcd"
   },
   "navigationUrls": [
     {
