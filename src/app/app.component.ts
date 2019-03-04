@@ -21,18 +21,18 @@ import { RouterOutlet } from '@angular/router';
         query(':enter', [
           style({ right: '-100%'})
         ]),
-        query(':leave', animateChild()),
+        query(':leave', animateChild(), {optional: true}),
         group([
           query(':leave', [
             animate('250ms ease-out', style({ right: '100%' }))
-          ]),
+          ], {optional: true}),
           query(':enter', [
             animate('250ms ease-out', style({ right: '0%' }))
           ])
         ]),
         query(':enter', animateChild())
       ]),
-      transition('* => HomePage', [
+      transition('UserPage => HomePage', [
         style({position: 'relative'}),
         query(':enter, :leave', [
           style({
@@ -45,11 +45,11 @@ import { RouterOutlet } from '@angular/router';
         query(':enter', [
           style({ left: '-100%'})
         ]),
-        query(':leave', animateChild()),
+        query(':leave', animateChild(), {optional: true}),
         group([
           query(':leave', [
             animate('250ms ease-out', style({ left: '100%' }))
-          ]),
+          ], {optional: true}),
           query(':enter', [
             animate('250ms ease-out', style({ left: '0%' }))
           ])
