@@ -1,12 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="container-fluid bg-primary p-3">
+<header class="main-header">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-white">Mobile Gestures</h1>
+            <h1 class="text-white">Angular Sandbox</h1>
         </div>
     </div>
-</div>
-<div [@routeAnimations]="prepareRoute(outlet)">
+</header>
+<main class="main-content" [@routeAnimations]="prepareRoute(outlet)">
     <router-outlet #outlet="outlet"></router-outlet>
-</div>
+</main>
 
