@@ -1,4 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <header class="main-header">
     <div class="row">
         <div class="col-12">
@@ -6,6 +5,13 @@
         </div>
     </div>
 </header>
+<div class="info-container">
+    <div class="row">
+        <div class="col-12">
+            <lib-alert [alertClass]="'alert-info'" [dismissable]="true">This is a sandbox Angular 7 application to test out things for work and play.</lib-alert>
+        </div>
+    </div>
+</div>
 <main class="main-content" [@routeAnimations]="prepareRoute(outlet)">
     <router-outlet #outlet="outlet"></router-outlet>
 </main>

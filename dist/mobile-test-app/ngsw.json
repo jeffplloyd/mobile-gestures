@@ -1,20 +1,20 @@
 {
   "configVersion": 1,
-  "index": "/mobile-gestures/dist/mobile-test-app/index.html",
+  "index": "/index.html",
   "assetGroups": [
     {
       "name": "app",
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "/mobile-gestures/dist/mobile-test-app/5.1492abed3fa15616f2b5.js",
-        "/mobile-gestures/dist/mobile-test-app/es2015-polyfills.4a4cfea0ce682043f4e9.js",
-        "/mobile-gestures/dist/mobile-test-app/favicon.ico",
-        "/mobile-gestures/dist/mobile-test-app/index.html",
-        "/mobile-gestures/dist/mobile-test-app/main.93c01c20ff0e50972bdb.js",
-        "/mobile-gestures/dist/mobile-test-app/polyfills.407a467dedb63cfdd103.js",
-        "/mobile-gestures/dist/mobile-test-app/runtime.7bb467b3714fb3b7ba7d.js",
-        "/mobile-gestures/dist/mobile-test-app/styles.84407d0e6af31e8c3947.css"
+        "/5.6461c2c160b570bb0db9.js",
+        "/es2015-polyfills.4a4cfea0ce682043f4e9.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main.8230b3b7a04f20c79a67.js",
+        "/polyfills.407a467dedb63cfdd103.js",
+        "/runtime.19ea578ad7f1c13fb255.js",
+        "/styles.658b02cecba64daba015.css"
       ],
       "patterns": []
     },
@@ -23,36 +23,36 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
-        "/mobile-gestures/dist/mobile-test-app/assets/icons/icon-128x128.png",
-        "/mobile-gestures/dist/mobile-test-app/assets/icons/icon-144x144.png",
-        "/mobile-gestures/dist/mobile-test-app/assets/icons/icon-152x152.png",
-        "/mobile-gestures/dist/mobile-test-app/assets/icons/icon-192x192.png",
-        "/mobile-gestures/dist/mobile-test-app/assets/icons/icon-384x384.png",
-        "/mobile-gestures/dist/mobile-test-app/assets/icons/icon-512x512.png",
-        "/mobile-gestures/dist/mobile-test-app/assets/icons/icon-72x72.png",
-        "/mobile-gestures/dist/mobile-test-app/assets/icons/icon-96x96.png"
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "/mobile-gestures/dist/mobile-test-app/5.1492abed3fa15616f2b5.js": "2a8c6dbc9d6905a5b8c133f3923c30a8ed702b1c",
-    "/mobile-gestures/dist/mobile-test-app/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "/mobile-gestures/dist/mobile-test-app/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "/mobile-gestures/dist/mobile-test-app/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "/mobile-gestures/dist/mobile-test-app/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "/mobile-gestures/dist/mobile-test-app/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "/mobile-gestures/dist/mobile-test-app/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "/mobile-gestures/dist/mobile-test-app/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "/mobile-gestures/dist/mobile-test-app/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
-    "/mobile-gestures/dist/mobile-test-app/es2015-polyfills.4a4cfea0ce682043f4e9.js": "b7a81c61d32b0b12737f0c13f45973ba391cd7f9",
-    "/mobile-gestures/dist/mobile-test-app/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/mobile-gestures/dist/mobile-test-app/index.html": "c48d3c9f0c326cc47501a530141ae526cb984ceb",
-    "/mobile-gestures/dist/mobile-test-app/main.93c01c20ff0e50972bdb.js": "ccb496dc474d4630c886f2241bb4c909d6c3c83f",
-    "/mobile-gestures/dist/mobile-test-app/polyfills.407a467dedb63cfdd103.js": "ffa449995bf2eba2ccd0a002417214f7eb75e7b5",
-    "/mobile-gestures/dist/mobile-test-app/runtime.7bb467b3714fb3b7ba7d.js": "184132488e06ee4cbfcf27dcbcf10c11dee28ef9",
-    "/mobile-gestures/dist/mobile-test-app/styles.84407d0e6af31e8c3947.css": "3663ce521c2d63815979020b6c23c510b358ddcd"
+    "/5.6461c2c160b570bb0db9.js": "97ebed95ce0d88704cb8fc7213b79d452d6aafe9",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/es2015-polyfills.4a4cfea0ce682043f4e9.js": "b7a81c61d32b0b12737f0c13f45973ba391cd7f9",
+    "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/index.html": "70e63033b81dac16e98390139c2c8674d3a80c63",
+    "/main.8230b3b7a04f20c79a67.js": "2fa69b55c0e76d83745375443726e4879963f9b3",
+    "/polyfills.407a467dedb63cfdd103.js": "ffa449995bf2eba2ccd0a002417214f7eb75e7b5",
+    "/runtime.19ea578ad7f1c13fb255.js": "a56698983ce5bae7d401a5f3530b87f24759d597",
+    "/styles.658b02cecba64daba015.css": "a51736aca8dc3850f89dda37ce638e9b7a8cb4d3"
   },
   "navigationUrls": [
     {

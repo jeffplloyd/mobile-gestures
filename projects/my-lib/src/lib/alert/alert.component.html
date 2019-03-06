@@ -1,0 +1,8 @@
+<div *ngIf="show" [@expand] class="alert-container">
+    <div class="alert" [ngClass]="alertClass" role="alert">
+        <ng-content></ng-content>
+        <button *ngIf="dismissable" type="button" class="close" (click)="show = !show" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
