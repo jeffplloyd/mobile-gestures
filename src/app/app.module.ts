@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -14,7 +14,6 @@ import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-br
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { MyLibModule } from 'my-lib';
-import { AlertComponent } from 'projects/my-lib/src/public_api';
 
 export class HammerConfig extends HammerGestureConfig {
   overrides = <any>{
@@ -32,8 +31,7 @@ export class HammerConfig extends HammerGestureConfig {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    AlertComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -42,13 +40,14 @@ export class HammerConfig extends HammerGestureConfig {
     CoreModule,
     FormsModule,
     ReactiveFormsModule,
-    MyLibModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    MyLibModule
   ],
   providers: [{
     provide: HAMMER_GESTURE_CONFIG,
     useClass: HammerConfig
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

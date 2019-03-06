@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 
 @Component({
@@ -18,7 +18,8 @@ import { trigger, style, animate, transition } from '@angular/animations';
         ])
       ]
     )
-  ]
+  ],
+  encapsulation: ViewEncapsulation.None
 })
 export class AlertComponent implements OnInit {
   @Input() alertClass: string = 'alert-success'
