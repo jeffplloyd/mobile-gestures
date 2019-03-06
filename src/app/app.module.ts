@@ -13,6 +13,8 @@ import * as Hammer from 'hammerjs';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { MyLibModule } from 'my-lib';
+import { AlertComponent } from 'projects/my-lib/src/public_api';
 
 export class HammerConfig extends HammerGestureConfig {
   overrides = <any>{
@@ -30,7 +32,8 @@ export class HammerConfig extends HammerGestureConfig {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ export class HammerConfig extends HammerGestureConfig {
     CoreModule,
     FormsModule,
     ReactiveFormsModule,
+    MyLibModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{
